@@ -26,8 +26,8 @@ Short tasks the candidate solves **live on the call** while sharing their screen
 
 | Role | File | Tasks |
 | --- | --- | --- |
-| Full Stack (MERN) | [full-stack-mern.md](full-stack-mern.md) | FS-L1 to FS-L4 |
-| Backend (Node.js) | [backend-nodejs.md](backend-nodejs.md) | BE-L1 to BE-L4 |
+| Full Stack (MERN) | [full-stack-mern.md](full-stack-mern.md) | FS-L1 to FS-L9 |
+| Backend (Node.js) | [backend-nodejs.md](backend-nodejs.md) | BE-L1 to BE-L11 |
 | Frontend (React / Next.js) | [frontend-react-nextjs.md](frontend-react-nextjs.md) | FE-L1 to FE-L4 |
 | .NET Developer | [dotnet-developer.md](dotnet-developer.md) | NET-L1 to NET-L4 |
 | QA Engineer | [qa-engineer.md](qa-engineer.md) | QA-L1 to QA-L4 |
