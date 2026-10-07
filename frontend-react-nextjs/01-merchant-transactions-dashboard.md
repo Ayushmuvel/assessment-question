@@ -1,29 +1,36 @@
 # FE-01: Merchant Transactions Dashboard
 
-**Role:** Frontend Engineer (React / Next.js)  
-**Stack:** Next.js (App Router preferred), React, TypeScript, Tailwind CSS (or a comparable styling approach).
+**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FE-01** in your repository README and in your reply email.
 
-## Context
-Merchants log in to see how their business is doing and to find specific transactions quickly. Some merchants have thousands of transactions.
+## Scenario
 
-## Requirements
+Merchants need to find specific transactions quickly among hundreds of them.
 
-- Login page with validation. Protect all dashboard routes; redirect unauthenticated users to login.
-- **Overview page:** summary cards (total volume, number of transactions, success rate, failed count) for a selected date range.
-- A chart of daily volume for the last 30 days (any chart library).
-- **Transactions page:**
-  - Table: transaction ID, date, customer, amount, method (UPI / Card / Wallet), status.
-  - Search by transaction ID or customer, filter by status, method and date range.
-  - Server-side style pagination (at least 500 mock rows).
-  - Filters and page are stored in the URL, so a link can be shared and reloads keep the view.
-- Transaction detail drawer or page.
-- Loading (skeletons), empty, error (with retry) and success states.
-- Responsive down to 360 px width.
+## Must have
 
-## Bonus
-- Export the filtered list as CSV.
-- TanStack Query (or similar) for data fetching and caching.
-- Tests with React Testing Library or Playwright.
+- Next.js + TypeScript. Tailwind CSS or any styling approach.
+- Mock data: about 200 transactions (id, date, customer, amount, method `UPI | CARD | WALLET`, status `SUCCESS | FAILED | PENDING`), served from a Next.js route handler or a JSON file.
+- Summary cards: total volume, success rate, failed count.
+- Transactions table with:
+  - search by transaction ID or customer
+  - filter by status
+  - pagination
+- Filters and page number are kept in the URL, so a refresh keeps the view.
+- Loading, empty and error states.
+- Works on mobile width.
+
+## Bonus (optional)
+
+- Date range filter.
+- A daily volume chart.
+- One test (React Testing Library or Playwright).
+
+## Answer in your README (a few lines each)
+
+1. Which parts are Server Components and which are Client Components, and why?
+2. What would you change if there were 1 million transactions instead of 200?
+
+If you run out of time, list what you skipped and how you would build it.

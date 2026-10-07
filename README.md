@@ -12,30 +12,30 @@ Your invitation email gives you an **assessment ID** (for example, `FS-02`). Ope
 | --- | --- | --- |
 | [Full Stack Engineer (MERN)](full-stack-mern/README.md) | FS-01 | [P2P Wallet Transfer](full-stack-mern/01-p2p-wallet-transfer.md) |
 | | FS-02 | [Merchant Payment Links](full-stack-mern/02-merchant-payment-links.md) |
-| | FS-03 | [Refund & Dispute Portal](full-stack-mern/03-refund-and-dispute-portal.md) |
-| [Backend Engineer (Node.js)](backend-nodejs/README.md) | BE-01 | [Payment Orchestration Service](backend-nodejs/01-payment-orchestration-service.md) |
-| | BE-02 | [Double-Entry Ledger & Reconciliation](backend-nodejs/02-double-entry-ledger-and-reconciliation.md) |
-| | BE-03 | [Transaction Risk & Velocity Checks](backend-nodejs/03-transaction-risk-and-velocity-checks.md) |
+| | FS-03 | [Refund Portal](full-stack-mern/03-refund-and-dispute-portal.md) |
+| [Backend Engineer (Node.js)](backend-nodejs/README.md) | BE-01 | [Payment Status Service](backend-nodejs/01-payment-orchestration-service.md) |
+| | BE-02 | [Double-Entry Ledger](backend-nodejs/02-double-entry-ledger-and-reconciliation.md) |
+| | BE-03 | [Transaction Risk Checks](backend-nodejs/03-transaction-risk-and-velocity-checks.md) |
 | [Frontend Engineer (React / Next.js)](frontend-react-nextjs/README.md) | FE-01 | [Merchant Transactions Dashboard](frontend-react-nextjs/01-merchant-transactions-dashboard.md) |
 | | FE-02 | [Checkout Page](frontend-react-nextjs/02-checkout-page.md) |
 | | FE-03 | [KYC Onboarding Wizard](frontend-react-nextjs/03-kyc-onboarding-wizard.md) |
 | [.NET Developer](dotnet-developer/README.md) | NET-01 | [Wallet API](dotnet-developer/01-wallet-api.md) |
-| | NET-02 | [Settlement & Reconciliation Job](dotnet-developer/02-settlement-and-reconciliation-job.md) |
-| | NET-03 | [Payout API with Maker-Checker Approval](dotnet-developer/03-payout-api-with-maker-checker-approval.md) |
+| | NET-02 | [Settlement Reconciliation](dotnet-developer/02-settlement-and-reconciliation-job.md) |
+| | NET-03 | [Payout Approval API (Maker-Checker)](dotnet-developer/03-payout-api-with-maker-checker-approval.md) |
 | [QA Engineer / Software Tester](qa-engineer/README.md) | QA-01 | [Test Design for a Wallet Transfer](qa-engineer/01-test-design-for-a-wallet-transfer.md) |
 | | QA-02 | [API Test Suite](qa-engineer/02-api-test-suite.md) |
 | | QA-03 | [UI Automation for a Checkout Flow](qa-engineer/03-ui-automation-for-a-checkout-flow.md) |
 | [Flutter Mobile App Developer](flutter-developer/README.md) | FL-01 | [Wallet App – Send Money](flutter-developer/01-wallet-app-send-money.md) |
 | | FL-02 | [Scan & Pay (Merchant QR)](flutter-developer/02-scan-and-pay-merchant-qr.md) |
-| | FL-03 | [Offline-First Transaction History & Insights](flutter-developer/03-offline-first-transaction-history-and-insights.md) |
+| | FL-03 | [Offline-First Transaction History](flutter-developer/03-offline-first-transaction-history-and-insights.md) |
 | [Android Developer (Kotlin)](android-kotlin/README.md) | AND-01 | [Merchant Collect (QR) App](android-kotlin/01-merchant-collect-qr-app.md) |
 | | AND-02 | [Wallet with Reliable Transfers](android-kotlin/02-wallet-with-reliable-transfers.md) |
-| | AND-03 | [Agent Cash-In / Cash-Out App](android-kotlin/03-agent-cash-in-cash-out-app.md) |
+| | AND-03 | [Agent Cash-In / Cash-Out](android-kotlin/03-agent-cash-in-cash-out-app.md) |
 
 ## How it works
 
 1. Open the assessment matching the ID in your invitation email.
-2. Build your solution. Most candidates spend **4–6 hours**. You do not need to finish every bonus item.
+2. Build the **Must have** part. Each assessment is designed for **about 3 hours**. Bonus items are optional. If you run out of time, list what you skipped in your README and how you would build it.
 3. Push your work to a **public GitHub repository** (or a private one shared with the email given in your invitation).
 4. Reply to your invitation email with the repository link and your assessment ID **before the deadline** stated there.
 5. In the next round, you will walk us through your solution and answer questions about your choices.
@@ -47,6 +47,7 @@ Your invitation email gives you an **assessment ID** (for example, `FS-02`). Ope
   - your assessment ID
   - how to install and run the project (and tests, if any)
   - any assumptions you made
+  - your answers to the short questions at the end of the assessment
   - what you would improve with more time
 - For mobile apps: an APK or a short screen recording (2–3 minutes) of the app running.
 - For QA assessments: the documents and test files listed in the task.

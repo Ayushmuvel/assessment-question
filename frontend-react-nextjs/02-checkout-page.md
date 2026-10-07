@@ -1,27 +1,36 @@
 # FE-02: Checkout Page
 
-**Role:** Frontend Engineer (React / Next.js)  
-**Stack:** Next.js (App Router preferred), React, TypeScript, Tailwind CSS (or a comparable styling approach).
+**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FE-02** in your repository README and in your reply email.
 
-## Context
-A customer arrives on our hosted checkout page from a merchant's website to pay for an order. The page must be fast, trustworthy, and must never let the customer pay twice.
+## Scenario
 
-## Requirements
+A customer lands on our checkout page to pay for an order. The page must never let them pay twice, even on a slow network.
 
-- Route `/checkout/[orderId]` loads order details (merchant name, items, total) from a mock API.
-- Payment methods as tabs: **UPI** (enter UPI ID, validate format), **Card** (number with Luhn check, expiry, CVV, masked display) and **Wallet**.
-- After "Pay":
-  - Show an OTP step for cards (mock OTP `123456`).
-  - Show a "Processing" screen that polls the payment status.
-  - Handle the outcomes `SUCCESS`, `FAILED` (with retry) and `TIMEOUT` (show "We are confirming your payment", do **not** offer to pay again).
-- The Pay button can never trigger two payments: disable it and send an idempotency key with the request.
-- If the user refreshes during processing, the page resumes the status check instead of starting a new payment.
-- Accessible: full keyboard navigation, labelled inputs, visible focus, readable error messages.
-- Server-render the order summary for fast first paint.
+## Must have
 
-## Bonus
-- Session expiry timer (for example, 10 minutes) with a clear message when it runs out.
-- Playwright test covering the double-click and refresh cases.
+- Next.js + TypeScript.
+- Route `/checkout/[orderId]` shows an order summary (merchant, amount) from mock data.
+- Two payment methods:
+  - **UPI ID** with format validation (for example `name@bank`)
+  - **Card** with a Luhn check on the number, plus expiry and CVV validation
+- After "Pay", a mock API returns `SUCCESS`, `FAILED` or `TIMEOUT` at random.
+  - Show a processing state, then the result screen.
+  - On `FAILED`, allow retry. On `TIMEOUT`, show "We are confirming your payment" and do **not** offer to pay again.
+- The Pay button can never send two payments: disable it, and send the same idempotency key with the request.
+- Labelled inputs, keyboard usable, clear error messages.
+
+## Bonus (optional)
+
+- Refreshing during processing resumes the status check instead of starting a new payment.
+- Card OTP step (mock OTP `123456`).
+- A Playwright test for the double-click case.
+
+## Answer in your README (a few lines each)
+
+1. Why is disabling the button not enough on its own to prevent double payments?
+2. What should the page show if the user closes the tab during processing and comes back?
+
+If you run out of time, list what you skipped and how you would build it.

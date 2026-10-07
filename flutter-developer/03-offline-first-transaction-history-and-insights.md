@@ -1,28 +1,35 @@
-# FL-03: Offline-First Transaction History & Insights
+# FL-03: Offline-First Transaction History
 
-**Role:** Flutter Mobile App Developer  
-**Stack:** Flutter and Dart, with Bloc, Riverpod, Provider or a similar state management approach.
+**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FL-03** in your repository README and in your reply email.
 
-## Context
-Users want to understand their spending. Our app must work smoothly with thousands of transactions, even offline.
+## Scenario
 
-## Requirements
+Users check their transaction history often, sometimes with no internet. The app must open fast and scroll smoothly through many transactions.
 
-- Mock API returning **at least 2,000 transactions**, paginated (`page`, `limit`), with fields: id, date, merchant, category, amount, type (debit / credit), status.
+## Must have
+
+- A mock API (inside the app) returning **about 500 transactions**, paginated (`page`, `limit`), with a short delay. Fields: id, date, merchant, amount, type (debit / credit), status.
 - **Transactions list:**
   - infinite scroll with pagination
-  - search by merchant, filter by category, type, status and date range
-  - grouped by day with daily totals
-  - smooth scrolling with no jank (use DevTools to check)
-- **Offline-first:** data is cached locally; the app opens instantly with cached data and refreshes in the background. Show "Last updated at ..." text.
-- **Insights screen:** monthly spend by category (pie or bar chart) and a month-over-month comparison.
-- **Transaction detail** with a "Report a problem" form that queues the report while offline and sends it when the network returns.
-- **App lock:** biometrics or PIN when the app opens.
-- Responsive layout for phones and tablets.
+  - search by merchant
+  - filter by type (debit / credit)
+- **Offline-first:** cache data locally (Hive, sqflite, Isar or similar). The app opens with cached data, refreshes in the background, and shows "Last updated at …".
+- **Detail screen** for a transaction.
+- Submit a 2–3 minute screen recording (an APK is welcome).
 
-## Bonus
-- Unit tests for the caching and sync logic.
-- Platform channel (or plugin) example to read the device's battery or network type and show it in a debug screen.
+## Bonus (optional)
+
+- Group the list by day with daily totals.
+- Monthly spend chart.
+- App lock with biometrics or PIN.
+- Unit tests for the caching logic.
+
+## Answer in your README (a few lines each)
+
+1. How do you decide when cached data is too old to show?
+2. How did you keep scrolling smooth? How would you check for performance problems?
+
+If you run out of time, list what you skipped and how you would build it.

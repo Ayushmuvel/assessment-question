@@ -1,27 +1,38 @@
-# AND-03: Agent Cash-In / Cash-Out App
+# AND-03: Agent Cash-In / Cash-Out
 
-**Role:** Android Developer (Kotlin)  
-**Stack:** Kotlin, Jetpack Compose (XML is acceptable where it makes sense), MVVM, Coroutines and Flow, Retrofit/OkHttp, Room, Hilt.
+**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **AND-03** in your repository README and in your reply email.
 
-## Context
-In mobile money, local agents help customers deposit (cash-in) and withdraw (cash-out) money. Agents work in shops with weak networks and handle many customers a day, so the app must be quick and safe.
+## Scenario
 
-## Requirements
+In mobile money, local agents help customers deposit (cash-in) and withdraw (cash-out) money. Agents serve many customers a day, so the app must be quick and safe.
 
-- **Agent login** with agent code + PIN, then biometric unlock on later launches.
-- **Dashboard:** agent float balance, today's cash-in and cash-out totals, number of transactions.
-- **Cash-In flow:** customer mobile number → amount → customer confirmation via mock OTP (`123456`) → agent PIN → receipt.
-- **Cash-Out flow:** customer mobile number → amount → customer approves with mock OTP → agent PIN → receipt.
-  - Cash-out cannot exceed the customer's mock balance; cash-in cannot exceed the agent's float.
-- **Scan customer QR** (CameraX + ML Kit or ZXing) as a faster way to fill the mobile number.
-- **Receipts:** share as an image or PDF.
-- **Transaction history** with filters (type, date, status), cached in Room.
-- **Session timeout:** after 3 minutes of inactivity, require the PIN again.
-- No sensitive data (PIN, OTP, tokens) in logs.
+## Must have
 
-## Bonus
-- Print the receipt to a Bluetooth printer (or a stub with a clear interface for it).
-- Unit tests for the limit rules and the session timeout.
+Mock the API inside the app (a fake repository with mock balances). No backend is needed.
+
+- Kotlin, Jetpack Compose, MVVM, Coroutines and Flow.
+- **Dashboard:** the agent's float balance and today's cash-in and cash-out totals.
+- **Cash-In flow:** customer mobile → amount → confirm → receipt screen.
+  - cash-in cannot exceed the agent's float
+- **Cash-Out flow:** customer mobile → amount → customer OTP (mock `123456`) → receipt screen.
+  - cash-out cannot exceed the customer's balance
+- The dashboard totals update after each transaction.
+- **Session timeout:** after 3 minutes of inactivity, return to a PIN screen.
+- Submit a 2–3 minute screen recording (an APK is welcome).
+
+## Bonus (optional)
+
+- Scan the customer's QR code to fill the mobile number.
+- Transaction history cached in Room.
+- Share the receipt as an image.
+- Unit tests for the limit rules.
+
+## Answer in your README (a few lines each)
+
+1. How did you implement the inactivity timeout, and how does it behave when the app goes to the background?
+2. Which data must never appear in logs in an app like this?
+
+If you run out of time, list what you skipped and how you would build it.

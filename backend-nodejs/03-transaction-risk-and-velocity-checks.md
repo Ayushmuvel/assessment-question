@@ -1,29 +1,34 @@
-# BE-03: Transaction Risk & Velocity Checks
+# BE-03: Transaction Risk Checks
 
-**Role:** Backend Engineer (Node.js)  
-**Stack:** Node.js with Express or NestJS. MongoDB, PostgreSQL or MySQL. TypeScript is preferred.
+**Role:** Backend Engineer (Node.js) · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **BE-03** in your repository README and in your reply email.
 
-## Context
-Before approving a transaction, we run fraud and risk rules. They must be fast (under 50 ms) because they sit on the payment path.
+## Scenario
 
-## Requirements
+Before approving a transaction, we run fraud rules. They sit on the payment path, so they must be fast.
 
-- `POST /risk/check`
-  - Body: `{ "userId": "...", "amount": 2000, "deviceId": "...", "ip": "...", "merchantCategory": "GAMING" }`
-  - Response: `{ "decision": "ALLOW" | "REVIEW" | "BLOCK", "reasons": ["..."] }`
-- Implement at least these rules:
-  1. More than 5 transactions from the same user within 1 minute → `BLOCK`.
-  2. Total amount over ₹1,00,000 for a user in 24 hours → `REVIEW`.
-  3. A new device seen for the user in the last 10 minutes and amount over ₹10,000 → `REVIEW`.
-  4. Merchant category on a configurable blocklist → `BLOCK`.
-- Rules must be **configurable** (limits, time windows) without code changes: JSON config, a DB table, or an admin endpoint.
-- Use Redis (or an in-memory equivalent with a clear interface) for counters and time windows.
-- `GET /risk/decisions?userId=`: audit trail of past decisions.
-- Rate-limit the `/risk/check` endpoint per API key.
+## Must have
 
-## Bonus
-- Unit tests for each rule, including the edge of each time window.
-- A short note on how you would scale this to 5,000 checks per second.
+- `POST /risk/check` with body `{ "userId": "...", "amount": 2000, "merchantCategory": "GAMING" }`
+  - returns `{ "decision": "ALLOW" | "REVIEW" | "BLOCK", "reasons": ["..."] }`
+- Implement these rules:
+  1. more than 5 checks for the same user within 1 minute → `BLOCK`
+  2. total amount over ₹1,00,000 for a user in the last 24 hours → `REVIEW`
+  3. merchant category on a blocklist → `BLOCK`
+- Limits, time windows and the blocklist come from a config file, not hard-coded values.
+- Store counters in Redis, or in memory behind a clear interface that could be swapped for Redis.
+- Unit tests for each rule.
+
+## Bonus (optional)
+
+- `GET /risk/decisions?userId=`: history of past decisions.
+- Test the edge of each time window (exactly 1 minute, exactly 24 hours).
+
+## Answer in your README (a few lines each)
+
+1. How would this work with 5 servers instead of one?
+2. If Redis is down, should you allow or block transactions? Why?
+
+If you run out of time, list what you skipped and how you would build it.

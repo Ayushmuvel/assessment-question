@@ -1,26 +1,35 @@
-# NET-03: Payout API with Maker-Checker Approval
+# NET-03: Payout Approval API (Maker-Checker)
 
-**Role:** .NET Developer  
-**Stack:** C#, ASP.NET Core Web API (.NET 8 preferred), Entity Framework Core or Dapper, SQL Server or MySQL.
+**Role:** .NET Developer · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **NET-03** in your repository README and in your reply email.
 
-## Context
-Large payouts to merchants need two people: a **maker** creates the payout and a different **checker** approves it. This is a standard control in banking.
+## Scenario
 
-## Requirements
+Large payouts to merchants need two people: a **maker** creates the payout and a different **checker** approves it. This is a standard banking control.
 
-- Roles: `Maker`, `Checker`, `Admin` (JWT, policy-based authorization).
-- `POST /api/payouts`: maker creates a payout `{ merchantId, amount, bankAccount, reason }`.
-  - Payouts above ₹1,00,000 need checker approval. Smaller ones are auto-approved.
-- `POST /api/payouts/{id}/approve` and `/reject`: checker only. **The maker cannot approve their own payout.**
-- Statuses: `PENDING_APPROVAL → APPROVED → PROCESSING → PAID | FAILED`, or `REJECTED`. Block invalid transitions.
-- Approved payouts are sent to a **mock bank API** (write it yourself) that randomly succeeds or fails. Failed payouts can be retried without paying twice.
-- Every action writes an **audit log** (user, action, old status, new status, timestamp, IP).
-- `GET /api/payouts` with filters (status, merchant, date range, amount range) and paging.
-- Mask bank account numbers in all responses (`XXXXXX4321`).
+## Must have
 
-## Bonus
-- Integration tests for the maker-checker rule and the retry behaviour.
-- Use the outbox pattern or a queue (RabbitMQ / Kafka) for sending payouts. Explain why.
+- ASP.NET Core Web API with EF Core or Dapper. SQL Server, MySQL or SQLite.
+- JWT with seeded users in two roles: `Maker` and `Checker`.
+- `POST /api/payouts`: a maker creates `{ merchantId, amount, reason }`.
+  - above ₹1,00,000 → status `PENDING_APPROVAL`
+  - otherwise → `APPROVED`
+- `POST /api/payouts/{id}/approve` and `/reject`: checker only. **The maker cannot approve their own payout**, even with both roles.
+- Block invalid status changes (for example, approving a `REJECTED` payout).
+- `GET /api/payouts?status=`: list with a filter.
+- Swagger enabled.
+
+## Bonus (optional)
+
+- Audit log (user, action, old status, new status, time).
+- Send approved payouts to a mock bank that can fail, with a retry that never pays twice.
+- Integration tests for the maker-checker rule.
+
+## Answer in your README (a few lines each)
+
+1. Two checkers approve the same payout at the same moment. What happens?
+2. Where did you put the maker-checker rule (controller, service, policy), and why?
+
+If you run out of time, list what you skipped and how you would build it.

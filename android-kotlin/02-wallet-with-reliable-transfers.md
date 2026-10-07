@@ -1,26 +1,35 @@
 # AND-02: Wallet with Reliable Transfers
 
-**Role:** Android Developer (Kotlin)  
-**Stack:** Kotlin, Jetpack Compose (XML is acceptable where it makes sense), MVVM, Coroutines and Flow, Retrofit/OkHttp, Room, Hilt.
+**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **AND-02** in your repository README and in your reply email.
 
-## Context
+## Scenario
+
 Our users often lose network while sending money. A transfer started offline must be sent later, exactly once.
 
-## Requirements
+## Must have
 
-- **Home:** balance and recent transactions (Room cache + network refresh with Flow).
-- **Send Money:** receiver mobile number, amount (₹1 – ₹50,000), 4-digit PIN confirmation.
-  - Every transfer gets a unique `requestId`, saved locally **before** calling the API.
-  - If offline, save the transfer as `QUEUED` and send it later with **WorkManager** (network constraint, exponential backoff).
-  - Retries always reuse the same `requestId`, so the server can ignore duplicates.
-  - The UI clearly shows `QUEUED`, `SENDING`, `SUCCESS` and `FAILED` states for each transfer.
-- **Biometric unlock** (`BiometricPrompt`) when opening the app, with PIN as a fallback.
-- Handle errors clearly: no network, server error, insufficient balance, session expired (go to login).
-- Dependency injection with Hilt; coroutines with correct scopes and dispatchers.
+Mock the API inside the app (a fake repository that can fail or time out). No backend is needed.
 
-## Bonus
-- Unit tests for the queue/retry logic and an instrumentation or Compose UI test for the Send Money screen.
-- Firebase Cloud Messaging (or a local notification) when a queued transfer completes.
+- Kotlin, Jetpack Compose, MVVM, Coroutines and Flow, Room.
+- **Send Money screen:** receiver mobile number and amount (₹1 – ₹50,000) with validation.
+- Every transfer gets a unique `requestId` and is **saved in Room before** calling the API.
+- If offline or the call fails, the transfer stays `QUEUED` and is sent later by **WorkManager** (with a network constraint).
+- Retries always reuse the same `requestId`.
+- **Transfers list** showing each transfer's state: `QUEUED`, `SENDING`, `SUCCESS` or `FAILED`.
+- Submit a 2–3 minute screen recording (an APK is welcome).
+
+## Bonus (optional)
+
+- Hilt for dependency injection.
+- Biometric unlock (`BiometricPrompt`).
+- Unit tests for the queue and retry logic.
+
+## Answer in your README (a few lines each)
+
+1. The app is killed while a transfer is `SENDING`. What happens when WorkManager runs again?
+2. Why save the transfer in Room before calling the API?
+
+If you run out of time, list what you skipped and how you would build it.

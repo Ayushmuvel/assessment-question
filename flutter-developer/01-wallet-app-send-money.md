@@ -1,29 +1,37 @@
 # FL-01: Wallet App – Send Money
 
-**Role:** Flutter Mobile App Developer  
-**Stack:** Flutter and Dart, with Bloc, Riverpod, Provider or a similar state management approach.
+**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FL-01** in your repository README and in your reply email.
 
-## Context
-Users in areas with weak networks use our wallet app to send money. Tapping "Send" twice or losing signal halfway must never send money twice.
+## Scenario
 
-## Requirements
+Users on weak networks send money with our app. Tapping "Send" twice or losing signal must never send money twice.
 
-- **Login** with mobile number + mock OTP (`123456`). Store the session token in **secure storage** (`flutter_secure_storage`), not plain shared preferences.
-- **Home:** wallet balance and the last 10 transactions, with pull-to-refresh.
-- **Send Money:**
-  - pick a contact from a mock list or enter a mobile number
-  - enter an amount (₹1 – ₹50,000) with validation
-  - confirm with a 4-digit PIN screen
-  - the button is disabled and shows a loader while the request is pending
-  - each transfer carries a unique request ID; on timeout, retry **once with the same request ID**
-  - result screens: Success, Failed (with reason), and "Processing" for timeouts
-- **Offline:** show an offline banner and the last cached balance and transactions (Hive, sqflite or Isar).
-- Clean structure: UI, state, repository and API layers separated.
+## Must have
 
-## Bonus
-- Unit tests for the state logic and one widget test for the Send Money screen.
-- Dark mode.
-- App lock after 2 minutes in the background.
+Mock everything inside the app (a fake repository with delays and random failures). No backend is needed.
+
+- **Home screen:** balance and recent transactions.
+- **Send Money screen:** receiver mobile number and amount (₹1 – ₹50,000) with validation.
+  - The button is disabled and shows a loader while the request is pending.
+  - Each transfer has a unique request ID. On a timeout, retry **once with the same request ID**.
+  - Result: Success, Failed (with a reason), or "Processing" after a second timeout.
+  - The balance on Home updates after a successful transfer.
+- State management with Bloc, Riverpod or Provider. Keep UI, state and data layers separate.
+- Submit a 2–3 minute screen recording (an APK is welcome).
+
+## Bonus (optional)
+
+- PIN confirmation screen before sending.
+- Store a mock session token in `flutter_secure_storage`.
+- Cache the last balance and transactions for offline viewing.
+- Unit tests for the state logic.
+
+## Answer in your README (a few lines each)
+
+1. Why reuse the same request ID on retry? What would go wrong with a new one?
+2. The user kills the app while a transfer is "Processing". What should they see when they open it again?
+
+If you run out of time, list what you skipped and how you would build it.

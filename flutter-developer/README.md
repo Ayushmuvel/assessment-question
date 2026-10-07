@@ -4,10 +4,10 @@
 
 Use a mock API: a local JSON file, a mock HTTP client, or a free mock service. Submit an **APK** (or iOS build instructions) **and** a 2–3 minute screen recording.
 
-Complete **only the assessment named in your invitation email**.
+Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; bonus items are optional.
 
 | ID | Assessment |
 | --- | --- |
 | FL-01 | [Wallet App – Send Money](01-wallet-app-send-money.md) |
 | FL-02 | [Scan & Pay (Merchant QR)](02-scan-and-pay-merchant-qr.md) |
-| FL-03 | [Offline-First Transaction History & Insights](03-offline-first-transaction-history-and-insights.md) |
+| FL-03 | [Offline-First Transaction History](03-offline-first-transaction-history-and-insights.md) |

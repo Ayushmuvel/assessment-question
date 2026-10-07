@@ -1,34 +1,40 @@
-# FS-03: Refund & Dispute Portal
+# FS-03: Refund Portal
 
-**Role:** Full Stack Engineer (MERN)  
-**Stack:** MongoDB, Express.js, React, Node.js. TypeScript is preferred.
+**Role:** Full Stack Engineer (MERN) · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FS-03** in your repository README and in your reply email.
 
-## Context
-Our operations team handles customer refund requests. Refunds must never exceed the original payment, and every action must be auditable.
+## Scenario
 
-## Requirements
+Our operations team handles customer refund requests. A refund must never exceed the original payment, and the person who requests a refund cannot approve it.
 
-**Backend**
+## Must have
 
-- Seed the database with at least 30 sample payments (amount, customer, merchant, status, date).
-- Roles: `agent` (can request refunds) and `supervisor` (can approve or reject them).
-- `POST /payments/:id/refunds`: agent requests a full or partial refund with a reason.
-  - The total of approved + pending refunds must never exceed the payment amount.
-  - Only `SUCCESS` payments can be refunded.
-- `POST /refunds/:id/approve` and `POST /refunds/:id/reject`: supervisor only. An agent cannot approve their own request.
-- Every create, approve and reject writes an **audit log** entry (who, what, when, old value, new value).
-- `GET /payments` with search (customer name or payment ID), filters (status, date range) and pagination.
+**Backend (Node.js + Express + MongoDB)**
 
-**Frontend**
+- Seed about 20 payments (id, customer, amount, status) and two users: an `agent` and a `supervisor`. Pick the user with a simple header or login.
+- `POST /payments/:id/refunds`: the agent requests a full or partial refund.
+  - only `SUCCESS` payments can be refunded
+  - approved + pending refunds must never exceed the payment amount
+- `POST /refunds/:id/approve` and `/reject`: supervisor only.
+- `GET /payments/:id`: payment details with its refunds.
 
-- Payments table with search, filters and pagination.
-- Payment detail page: payment info, refund history, "Request refund" form.
-- Supervisor view: a queue of pending refunds with Approve / Reject actions.
-- Audit log view for a payment.
+**Frontend (React)**
 
-## Bonus
-- Concurrency safety: two agents requesting refunds on the same payment at the same time cannot exceed the limit.
-- Tests for the refund limit rules and role permissions.
+- Payments list.
+- Payment detail page with refund history and a "Request refund" form.
+- Pending refunds list with Approve / Reject buttons for the supervisor.
+
+## Bonus (optional)
+
+- Audit log (who did what, when).
+- Search and filters on the payments list.
+- Tests for the refund limit and role rules.
+
+## Answer in your README (a few lines each)
+
+1. Two agents request a refund on the same payment at the same moment. How do you stop the total going over the limit?
+2. What would you add before this went to production?
+
+If you run out of time, list what you skipped and how you would build it.

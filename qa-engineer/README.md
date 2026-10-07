@@ -2,7 +2,7 @@
 
 Submit documents as Markdown, Excel/Google Sheets (export to `.xlsx` or `.csv` in the repo), or PDF. Automation code goes in the same repository.
 
-Complete **only the assessment named in your invitation email**.
+Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; bonus items are optional.
 
 | ID | Assessment |
 | --- | --- |

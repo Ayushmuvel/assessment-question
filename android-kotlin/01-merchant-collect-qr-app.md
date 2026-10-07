@@ -1,27 +1,37 @@
 # AND-01: Merchant Collect (QR) App
 
-**Role:** Android Developer (Kotlin)  
-**Stack:** Kotlin, Jetpack Compose (XML is acceptable where it makes sense), MVVM, Coroutines and Flow, Retrofit/OkHttp, Room, Hilt.
+**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (bonus is optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **AND-01** in your repository README and in your reply email.
 
-## Context
-Shopkeepers use our app to collect payments. They enter an amount, show a QR code to the customer, and wait for the payment to be confirmed.
+## Scenario
 
-## Requirements
+Shopkeepers use our app to collect payments: they enter an amount, show a QR code, and wait for the payment to be confirmed.
 
-- **Login** with merchant ID and PIN. Store the token with **EncryptedSharedPreferences** or **DataStore + Android Keystore**.
-- **Collect screen:**
-  - enter an amount and an optional note
-  - generate a QR code for a payload like `upi://pay?pa=shop@bank&pn=Shop&am=250.00&tr=<txnRef>`
-  - observe the payment status (polling every 3 seconds is fine) until `SUCCESS`, `FAILED` or a 5-minute timeout
-  - polling stops when the screen closes, and resumes correctly after rotation
-- **Success screen** with a sound and a short summary.
-- **Today's collections:** list from the API, cached in **Room** as the single source of truth; works offline.
-- Rotation and process death must not lose state or repeat API calls (`ViewModel` + `SavedStateHandle`).
+## Must have
+
+Mock the API inside the app (a fake repository with delays). No backend is needed.
+
+- Kotlin, Jetpack Compose, MVVM, Coroutines and Flow.
+- **Collect screen:** enter an amount and generate a QR code for
+  `upi://pay?pa=shop@bank&pn=Shop&am=250.00&tr=<txnRef>`
+- **Waiting state:** check the payment status every 3 seconds until `SUCCESS`, `FAILED` or a 2-minute timeout.
+  - Checking stops when the user leaves the screen.
+  - Rotating the screen does not restart the payment or lose state.
+- **Result screen** for success, failure and timeout.
+- Submit a 2–3 minute screen recording (an APK is welcome).
+
+## Bonus (optional)
+
+- Today's collections list, cached in Room.
+- Hilt for dependency injection.
 - Block screenshots on payment screens (`FLAG_SECURE`).
+- A ViewModel unit test.
 
-## Bonus
-- Unit tests for the ViewModel with a fake repository.
-- A daily summary notification using WorkManager.
+## Answer in your README (a few lines each)
+
+1. How did you make sure the status checks stop and do not leak when the screen closes?
+2. What happens to the waiting state after process death, and how would you handle it?
+
+If you run out of time, list what you skipped and how you would build it.
