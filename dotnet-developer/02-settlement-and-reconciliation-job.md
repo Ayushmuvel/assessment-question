@@ -1,6 +1,6 @@
 # NET-02: Settlement Reconciliation
 
-**Role:** .NET Developer · **Time:** about 3 hours (bonus is optional)
+**Role:** .NET Developer · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **NET-02** in your repository README and in your reply email.
@@ -22,8 +22,12 @@ Every night, our partner bank sends a settlement file of the payments it process
 - Uploading the **same file twice** does not create duplicate results.
 - Swagger enabled.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- JWT authentication, with uploads allowed only for an `Admin` role.
+- Use MySQL or SQL Server instead of SQLite.
 - Process the file in a background service and expose `GET /api/settlements/{id}` for status.
 - Detect duplicate rows inside the bank file.
 - Unit tests for the matching logic.

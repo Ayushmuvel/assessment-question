@@ -1,6 +1,6 @@
 # FS-03: Refund Portal
 
-**Role:** Full Stack Engineer (MERN) · **Time:** about 3 hours (bonus is optional)
+**Role:** Full Stack Engineer (MERN) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FS-03** in your repository README and in your reply email.
@@ -26,8 +26,11 @@ Our operations team handles customer refund requests. A refund must never exceed
 - Payment detail page with refund history and a "Request refund" form.
 - Pending refunds list with Approve / Reject buttons for the supervisor.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Add MongoDB indexes for your main queries and explain each one in your README.
 - Audit log (who did what, when).
 - Search and filters on the payments list.
 - Tests for the refund limit and role rules.

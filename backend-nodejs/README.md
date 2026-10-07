@@ -4,7 +4,7 @@
 
 No frontend is required. Provide a Postman collection, an OpenAPI/Swagger file, or curl examples so we can call your API.
 
-Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; bonus items are optional.
+Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; additional tasks are optional and earn plus points.
 
 | ID | Assessment |
 | --- | --- |

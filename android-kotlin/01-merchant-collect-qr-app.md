@@ -1,6 +1,6 @@
 # AND-01: Merchant Collect (QR) App
 
-**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (bonus is optional)
+**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **AND-01** in your repository README and in your reply email.
@@ -22,8 +22,12 @@ Mock the API inside the app (a fake repository with delays). No backend is neede
 - **Result screen** for success, failure and timeout.
 - Submit a 2–3 minute screen recording (an APK is welcome).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use Retrofit + OkHttp with a mock interceptor or MockWebServer instead of a fake repository.
+- Store a mock session token with EncryptedSharedPreferences or DataStore + Android Keystore.
 - Today's collections list, cached in Room.
 - Hilt for dependency injection.
 - Block screenshots on payment screens (`FLAG_SECURE`).

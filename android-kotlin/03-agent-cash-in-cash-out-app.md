@@ -1,6 +1,6 @@
 # AND-03: Agent Cash-In / Cash-Out
 
-**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (bonus is optional)
+**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **AND-03** in your repository README and in your reply email.
@@ -23,8 +23,12 @@ Mock the API inside the app (a fake repository with mock balances). No backend i
 - **Session timeout:** after 3 minutes of inactivity, return to a PIN screen.
 - Submit a 2–3 minute screen recording (an APK is welcome).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use Retrofit + OkHttp with a mock interceptor or MockWebServer instead of a fake repository.
+- Hilt for dependency injection.
 - Scan the customer's QR code to fill the mobile number.
 - Transaction history cached in Room.
 - Share the receipt as an image.

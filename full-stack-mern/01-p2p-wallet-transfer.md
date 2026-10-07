@@ -1,6 +1,6 @@
 # FS-01: P2P Wallet Transfer
 
-**Role:** Full Stack Engineer (MERN) · **Time:** about 3 hours (bonus is optional)
+**Role:** Full Stack Engineer (MERN) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FS-01** in your repository README and in your reply email.
@@ -25,8 +25,11 @@ Users send money to each other from a wallet. The network is unreliable, so clie
 - One page: balance, a Send Money form, and the transaction list.
 - The submit button is disabled while the request is in flight. Show success and error messages.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Add MongoDB indexes for your main queries and explain each one in your README.
 - Debit and credit inside a MongoDB transaction.
 - Tests for the transfer rules and the idempotency behaviour.
 - TypeScript.

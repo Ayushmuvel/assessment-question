@@ -4,7 +4,7 @@
 
 Use a mock API: Next.js route handlers, MSW, json-server, or static JSON. You do not need a real backend.
 
-Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; bonus items are optional.
+Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; additional tasks are optional and earn plus points.
 
 | ID | Assessment |
 | --- | --- |

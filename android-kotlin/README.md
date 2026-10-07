@@ -4,7 +4,7 @@
 
 Use a mock API: a local JSON file, an OkHttp interceptor, or a free mock service. Submit an **APK** and a 2–3 minute screen recording.
 
-Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; bonus items are optional.
+Complete **only the assessment named in your invitation email**. Each one is designed for about 3 hours; additional tasks are optional and earn plus points.
 
 | ID | Assessment |
 | --- | --- |

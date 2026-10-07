@@ -1,6 +1,6 @@
 # AND-02: Wallet with Reliable Transfers
 
-**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (bonus is optional)
+**Role:** Android Developer (Kotlin) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **AND-02** in your repository README and in your reply email.
@@ -21,8 +21,11 @@ Mock the API inside the app (a fake repository that can fail or time out). No ba
 - **Transfers list** showing each transfer's state: `QUEUED`, `SENDING`, `SUCCESS` or `FAILED`.
 - Submit a 2–3 minute screen recording (an APK is welcome).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use Retrofit + OkHttp with a mock interceptor or MockWebServer instead of a fake repository.
 - Hilt for dependency injection.
 - Biometric unlock (`BiometricPrompt`).
 - Unit tests for the queue and retry logic.

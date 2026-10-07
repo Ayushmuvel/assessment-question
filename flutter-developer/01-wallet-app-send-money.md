@@ -1,6 +1,6 @@
 # FL-01: Wallet App – Send Money
 
-**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (bonus is optional)
+**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FL-01** in your repository README and in your reply email.
@@ -22,8 +22,11 @@ Mock everything inside the app (a fake repository with delays and random failure
 - State management with Bloc, Riverpod or Provider. Keep UI, state and data layers separate.
 - Submit a 2–3 minute screen recording (an APK is welcome).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use an HTTP client with a mock adapter (for example Dio, or `http` with `MockClient`) and parse JSON responses into model classes.
 - PIN confirmation screen before sending.
 - Store a mock session token in `flutter_secure_storage`.
 - Cache the last balance and transactions for offline viewing.

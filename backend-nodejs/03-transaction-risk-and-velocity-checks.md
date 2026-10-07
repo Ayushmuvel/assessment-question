@@ -1,6 +1,6 @@
 # BE-03: Transaction Risk Checks
 
-**Role:** Backend Engineer (Node.js) · **Time:** about 3 hours (bonus is optional)
+**Role:** Backend Engineer (Node.js) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **BE-03** in your repository README and in your reply email.
@@ -21,8 +21,11 @@ Before approving a transaction, we run fraud rules. They sit on the payment path
 - Store counters in Redis, or in memory behind a clear interface that could be swapped for Redis.
 - Unit tests for each rule.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use a real Redis instance (Docker is fine).
 - `GET /risk/decisions?userId=`: history of past decisions.
 - Test the edge of each time window (exactly 1 minute, exactly 24 hours).
 

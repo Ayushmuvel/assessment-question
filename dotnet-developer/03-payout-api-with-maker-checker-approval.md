@@ -1,6 +1,6 @@
 # NET-03: Payout Approval API (Maker-Checker)
 
-**Role:** .NET Developer · **Time:** about 3 hours (bonus is optional)
+**Role:** .NET Developer · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **NET-03** in your repository README and in your reply email.
@@ -21,8 +21,11 @@ Large payouts to merchants need two people: a **maker** creates the payout and a
 - `GET /api/payouts?status=`: list with a filter.
 - Swagger enabled.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use MySQL or SQL Server instead of SQLite.
 - Audit log (user, action, old status, new status, time).
 - Send approved payouts to a mock bank that can fail, with a retry that never pays twice.
 - Integration tests for the maker-checker rule.

@@ -1,6 +1,6 @@
 # FS-02: Merchant Payment Links
 
-**Role:** Full Stack Engineer (MERN) · **Time:** about 3 hours (bonus is optional)
+**Role:** Full Stack Engineer (MERN) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FS-02** in your repository README and in your reply email.
@@ -28,8 +28,12 @@ A merchant creates a payment link and shares it with a customer. The payment res
 
 Send webhooks with curl or Postman. Include example commands in your README.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Merchant login with JWT, so only the merchant can create and see their links.
+- Add MongoDB indexes for your main queries and explain each one in your README.
 - Link expiry.
 - Verify a shared secret in a webhook header.
 - Auto-refresh of link status on the merchant page.

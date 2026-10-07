@@ -1,6 +1,6 @@
 # QA-01: Test Design for a Wallet Transfer
 
-**Role:** QA Engineer / Software Tester · **Time:** about 3 hours (bonus is optional)
+**Role:** QA Engineer / Software Tester · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **QA-01** in your repository README and in your reply email.
@@ -27,8 +27,12 @@ Mention the assessment ID **QA-01** in your repository README and in your reply 
 
 Submit as Markdown, a spreadsheet (`.xlsx` / `.csv`) or PDF.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- 5 refund test cases: full, partial, more than the payment amount, duplicate refund request, refund of a failed payment.
+- 5 mobile-specific test cases: incoming call during payment, app sent to background or killed, poor network, permission denied, small and large screens.
 - A short test plan: scope, out of scope, risks, entry and exit criteria.
 - If you had only 1 hour before release, which 10 test cases would you run and why?
 

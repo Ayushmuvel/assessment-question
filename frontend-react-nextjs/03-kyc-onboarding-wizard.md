@@ -1,6 +1,6 @@
 # FE-03: KYC Onboarding Wizard
 
-**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (bonus is optional)
+**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FE-03** in your repository README and in your reply email.
@@ -22,8 +22,11 @@ Before using their wallet, a user must verify their identity (KYC). Many users s
 - Progress is saved, so a refresh continues from the same step.
 - A final status screen after submit.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Mock login before the wizard, with the wizard routes protected.
 - Document upload step (image or PDF, max 2 MB, with preview).
 - Resend OTP with a 30-second timer.
 - Unit tests for the validation rules.

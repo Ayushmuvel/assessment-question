@@ -13,6 +13,8 @@ Your invitation email gives you an **assessment ID** (for example, `FS-02`). Ope
 | [Full Stack Engineer (MERN)](full-stack-mern/README.md) | FS-01 | [P2P Wallet Transfer](full-stack-mern/01-p2p-wallet-transfer.md) |
 | | FS-02 | [Merchant Payment Links](full-stack-mern/02-merchant-payment-links.md) |
 | | FS-03 | [Refund Portal](full-stack-mern/03-refund-and-dispute-portal.md) |
+| | FS-04 | [Wallet Top-Up via Payment Gateway](full-stack-mern/04-wallet-top-up-via-payment-gateway.md) |
+| | FS-05 | [Agent Commission Ledger](full-stack-mern/05-agent-commission-ledger.md) |
 | [Backend Engineer (Node.js)](backend-nodejs/README.md) | BE-01 | [Payment Status Service](backend-nodejs/01-payment-orchestration-service.md) |
 | | BE-02 | [Double-Entry Ledger](backend-nodejs/02-double-entry-ledger-and-reconciliation.md) |
 | | BE-03 | [Transaction Risk Checks](backend-nodejs/03-transaction-risk-and-velocity-checks.md) |
@@ -35,7 +37,7 @@ Your invitation email gives you an **assessment ID** (for example, `FS-02`). Ope
 ## How it works
 
 1. Open the assessment matching the ID in your invitation email.
-2. Build the **Must have** part. Each assessment is designed for **about 3 hours**. Bonus items are optional. If you run out of time, list what you skipped in your README and how you would build it.
+2. Build the **Must have** part. Each assessment is designed for **about 3 hours**. Additional tasks are optional and earn plus points. If you run out of time, list what you skipped in your README and how you would build it.
 3. Push your work to a **public GitHub repository** (or a private one shared with the email given in your invitation).
 4. Reply to your invitation email with the repository link and your assessment ID **before the deadline** stated there.
 5. In the next round, you will walk us through your solution and answer questions about your choices.

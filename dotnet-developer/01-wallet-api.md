@@ -1,6 +1,6 @@
 # NET-01: Wallet API
 
-**Role:** .NET Developer · **Time:** about 3 hours (bonus is optional)
+**Role:** .NET Developer · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **NET-01** in your repository README and in your reply email.
@@ -22,8 +22,12 @@ A digital wallet lets users transfer money. Clients retry on timeouts, so transf
 - Controller → Service → Repository layers, using dependency injection and DTOs.
 - Swagger enabled.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use MySQL or SQL Server instead of SQLite.
+- Use a stored procedure for at least one query.
 - xUnit tests for the transfer service.
 - An admin-only endpoint for monthly totals per user, using an optimised SQL query.
 

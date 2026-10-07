@@ -1,6 +1,6 @@
 # FE-01: Merchant Transactions Dashboard
 
-**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (bonus is optional)
+**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FE-01** in your repository README and in your reply email.
@@ -22,8 +22,11 @@ Merchants need to find specific transactions quickly among hundreds of them.
 - Loading, empty and error states.
 - Works on mobile width.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Mock login with protected routes, and one role difference (for example, only an `admin` sees an "Export CSV" button).
 - Date range filter.
 - A daily volume chart.
 - One test (React Testing Library or Playwright).

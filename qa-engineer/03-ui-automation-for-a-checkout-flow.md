@@ -1,6 +1,6 @@
 # QA-03: UI Automation for a Checkout Flow
 
-**Role:** QA Engineer / Software Tester · **Time:** about 3 hours (bonus is optional)
+**Role:** QA Engineer / Software Tester · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **QA-03** in your repository README and in your reply email.
@@ -20,8 +20,11 @@ Checkout is the most important journey in any payment product. Use the public de
 - A list of the bugs you find when logged in as `problem_user`, with steps to reproduce.
 - How to run the tests from the command line.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- 3 API tests on Restful Booker (see QA-02), plus one SQL query that would check an order and its total were saved correctly.
 - Run in two browsers (for example, Chromium and Firefox).
 - A GitHub Actions workflow with an HTML report.
 - Data-driven tests (users from a JSON file).

@@ -1,6 +1,6 @@
 # FL-03: Offline-First Transaction History
 
-**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (bonus is optional)
+**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FL-03** in your repository README and in your reply email.
@@ -20,8 +20,11 @@ Users check their transaction history often, sometimes with no internet. The app
 - **Detail screen** for a transaction.
 - Submit a 2–3 minute screen recording (an APK is welcome).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use an HTTP client with a mock adapter (for example Dio, or `http` with `MockClient`) and parse JSON responses into model classes.
 - Group the list by day with daily totals.
 - Monthly spend chart.
 - App lock with biometrics or PIN.

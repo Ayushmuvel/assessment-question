@@ -1,6 +1,6 @@
 # FL-02: Scan & Pay (Merchant QR)
 
-**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (bonus is optional)
+**Role:** Flutter Mobile App Developer · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FL-02** in your repository README and in your reply email.
@@ -22,8 +22,11 @@ Customers pay at shops by scanning the merchant's QR code. The flow must be quic
 - Include 2–3 test QR images in your repository.
 - Submit a 2–3 minute screen recording (an APK is welcome).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Unit tests for the QR parser (valid, missing amount, invalid format).
 - Confirm with device biometrics (`local_auth`).
 - "Pick QR from gallery" option.
 - Local history of past payments.

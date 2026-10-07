@@ -1,6 +1,6 @@
 # FE-02: Checkout Page
 
-**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (bonus is optional)
+**Role:** Frontend Engineer (React / Next.js) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **FE-02** in your repository README and in your reply email.
@@ -22,8 +22,11 @@ A customer lands on our checkout page to pay for an order. The page must never l
 - The Pay button can never send two payments: disable it, and send the same idempotency key with the request.
 - Labelled inputs, keyboard usable, clear error messages.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Unit tests for the Luhn and UPI validators.
 - Refreshing during processing resumes the status check instead of starting a new payment.
 - Card OTP step (mock OTP `123456`).
 - A Playwright test for the double-click case.

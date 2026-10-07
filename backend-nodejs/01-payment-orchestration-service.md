@@ -1,6 +1,6 @@
 # BE-01: Payment Status Service
 
-**Role:** Backend Engineer (Node.js) · **Time:** about 3 hours (bonus is optional)
+**Role:** Backend Engineer (Node.js) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **BE-01** in your repository README and in your reply email.
@@ -21,8 +21,11 @@ Our platform creates payments and receives status updates from a payment provide
 - Any database (MongoDB, PostgreSQL, MySQL or SQLite).
 - Include a Postman collection or curl examples.
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use MongoDB with indexes that enforce the duplicate rules (`orderId`, `eventId`).
 - A job that marks payments still `PENDING` after 15 minutes as `EXPIRED`.
 - Verify an HMAC signature on the webhook.
 - Tests for the duplicate `orderId` and the duplicate webhook.

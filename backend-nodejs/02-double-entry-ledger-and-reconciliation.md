@@ -1,6 +1,6 @@
 # BE-02: Double-Entry Ledger
 
-**Role:** Backend Engineer (Node.js) · **Time:** about 3 hours (bonus is optional)
+**Role:** Backend Engineer (Node.js) · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **BE-02** in your repository README and in your reply email.
@@ -21,8 +21,12 @@ Every money movement in a wallet system is recorded in a ledger. Balances are ca
 - `GET /accounts/:id/statement`: entries with a running balance.
 - Store amounts safely (integer paise or a decimal type, never floating point).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- Use MongoDB with multi-document transactions.
+- Unit tests for the transfer rules.
 - `POST /reconciliation`: upload a small CSV (`reference,amount`) and return matched, missing and mismatched entries.
 - A test showing that many parallel transfers from one account never overdraw it.
 

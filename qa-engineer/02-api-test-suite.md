@@ -1,6 +1,6 @@
 # QA-02: API Test Suite
 
-**Role:** QA Engineer / Software Tester · **Time:** about 3 hours (bonus is optional)
+**Role:** QA Engineer / Software Tester · **Time:** about 3 hours (additional tasks are optional)
 
 Read the [role overview](README.md) and the [submission rules](../README.md) before you start.
 Mention the assessment ID **QA-02** in your repository README and in your reply email.
@@ -20,8 +20,11 @@ APIs are the core of our platform. Use the public practice API **Restful Booker*
 - A short **test report**: what passed, what failed, and any bugs or odd behaviour you found, with steps to reproduce.
 - How to run the suite from the command line (for example, Newman or `npx playwright test`).
 
-## Bonus (optional)
+## Additional tasks (optional, plus points)
 
+Not required. Each one you complete counts in your favour.
+
+- A duplicate-request test (create the same booking twice), with a note on how a payments API should handle it.
 - JSON schema validation.
 - A GitHub Actions workflow that runs the suite on every push.
 - A small k6 or JMeter load test on the read endpoint, reporting p95 latency and error rate.
