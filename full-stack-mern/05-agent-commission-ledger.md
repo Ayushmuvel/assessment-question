@@ -11,32 +11,34 @@ In mobile money, **distributors** manage a network of **agents**. Each time an a
 
 ## Must have
 
-**Backend (Node.js + Express + MongoDB)**
+All amounts in the API are **integers in paise** (for example, `250000` = ₹2,500).
 
-- Seed: 1 `admin`, 2 `distributor` users, and 3 `agent` users linked to distributors. A simple JWT login is enough.
-- `POST /cash-ins` (agent only) with body `{ "customerMobile": "...", "amount": 2500 }` and header `Idempotency-Key`
+**Backend (Node.js with Express or NestJS, MongoDB)**
+
+- Seed 2 `distributor` users and 3 `agent` users, each agent linked to one distributor. A simple JWT login is enough.
+- `POST /cash-ins` (agent only) with body `{ "customerMobile": "...", "amount": 250000 }` and header `Idempotency-Key`
   - total commission = **1% of the amount**, capped at ₹50
   - split: **70% to the agent, 30% to the distributor**
-  - store amounts in **integer paise**. The two shares must always add up to the total commission; explain how you handle rounding.
+  - the two shares must always add up exactly to the total commission; explain how you handle rounding
   - the same `Idempotency-Key` never creates a second cash-in or commission
-- `GET /commissions/summary?period=day|week|month`
+- `GET /commissions/summary?period=today|month`
   - an agent sees only their own earnings
-  - a distributor sees their own earnings plus a per-agent breakdown
-  - an admin sees everything
+  - a distributor sees their own earnings plus a per-agent breakdown of their agents
 - Role checks on every endpoint (an agent cannot read another agent's data).
 
 **Frontend (React or Next.js)**
 
-- Login, then a dashboard that changes by role:
+- Login, then a dashboard that depends on the role:
   - agent: a cash-in form and their commission totals
-  - distributor: totals plus a table of their agents
-  - admin: totals for all distributors
-- Period filter (day / week / month) and loading, empty and error states.
+  - distributor: their totals plus a table of their agents
+- Period switch (today / this month) and loading, empty and error states.
 
 ## Additional tasks (optional, plus points)
 
 Not required. Each one you complete counts in your favour.
 
+- An `admin` role that sees totals for all distributors.
+- A "this week" period.
 - Commission rules (percentage, cap, split) from config, not hard-coded.
 - Tests for the commission and rounding rules, and for role access.
 - MongoDB aggregation for the summary, with indexes explained.

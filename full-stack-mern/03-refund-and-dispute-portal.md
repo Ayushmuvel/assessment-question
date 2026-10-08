@@ -7,20 +7,24 @@ Mention the assessment ID **FS-03** in your repository README and in your reply 
 
 ## Scenario
 
-Our operations team handles customer refund requests. A refund must never exceed the original payment, and the person who requests a refund cannot approve it.
+Our operations team handles customer refund requests. An agent requests a refund and a supervisor approves or rejects it. Refunds must never exceed the original payment.
 
 ## Must have
 
-**Backend (Node.js + Express + MongoDB)**
+All amounts in the API are **integers in paise** (for example, `50000` = ₹500).
 
-- Seed about 20 payments (id, customer, amount, status) and two users: an `agent` and a `supervisor`. Pick the user with a simple header or login.
-- `POST /payments/:id/refunds`: the agent requests a full or partial refund.
+**Backend (Node.js with Express or NestJS, MongoDB)**
+
+- Seed about 20 payments (id, customer, amount, status `SUCCESS` or `FAILED`) and two users: an `agent` and a `supervisor`. Identify the user with a simple header or login.
+- `GET /payments`: list of payments.
+- `GET /payments/:id`: payment details with its refunds.
+- `POST /payments/:id/refunds` (agent only): request a full or partial refund `{ amount, reason }`. The refund starts as `PENDING`.
   - only `SUCCESS` payments can be refunded
   - approved + pending refunds must never exceed the payment amount
-- `POST /refunds/:id/approve` and `/reject`: supervisor only.
-- `GET /payments/:id`: payment details with its refunds.
+- `GET /refunds?status=PENDING`: refunds waiting for a decision.
+- `POST /refunds/:id/approve` and `/reject` (supervisor only): moves a `PENDING` refund to `APPROVED` or `REJECTED`. A decided refund cannot be decided again.
 
-**Frontend (React)**
+**Frontend (React or Next.js)**
 
 - Payments list.
 - Payment detail page with refund history and a "Request refund" form.

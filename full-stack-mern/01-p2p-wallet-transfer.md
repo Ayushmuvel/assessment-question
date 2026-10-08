@@ -11,18 +11,21 @@ Users send money to each other from a wallet. The network is unreliable, so clie
 
 ## Must have
 
-**Backend (Node.js + Express + MongoDB)**
+All amounts in the API are **integers in paise** (for example, `50000` = ₹500).
+
+**Backend (Node.js with Express or NestJS, MongoDB)**
 
 - Seed 3 users with a balance of ₹10,000 each. A simple login that returns a JWT is enough (no registration).
 - `GET /wallet`: the logged-in user's balance.
-- `POST /wallet/transfer` with body `{ "toUserId": "...", "amount": 500 }` and header `Idempotency-Key: <uuid>`
+- `POST /wallet/transfer` with body `{ "toUserId": "...", "amount": 50000 }` and header `Idempotency-Key: <uuid>`
   - amount between ₹1 and ₹50,000, no transfer to yourself, enough balance required
+  - the `Idempotency-Key` header is required (return `400` if it is missing)
   - the same `Idempotency-Key` sent again returns the **original result** and does not move money again
-- `GET /transactions`: the user's transactions, newest first.
+- `GET /transactions`: the user's sent and received transactions, newest first.
 
-**Frontend (React)**
+**Frontend (React or Next.js)**
 
-- One page: balance, a Send Money form, and the transaction list.
+- One page: balance, a Send Money form (choosing the receiver from a dropdown of the seeded users is fine), and the transaction list.
 - The submit button is disabled while the request is in flight. Show success and error messages.
 
 ## Additional tasks (optional, plus points)
